@@ -66,6 +66,7 @@ dbController.getAllAvailableProspects = (req, res, next) => {
   db.query(text, values)
     .then((result) => {
       res.locals.getProspects = result.rows;
+      console.log("dbController.getAllAvailableProspects -> result.rows", result.rows)
       return next();
     })
     .catch((err) => {
